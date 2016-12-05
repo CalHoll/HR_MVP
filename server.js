@@ -10,5 +10,5 @@ var port = process.env.PORT || 8080;
 // serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.listen(port, function() {
-  console.log('Go witness the magic at http://localhost:' + port);
+  console.log('Website LIVE @ ==============> http://localhost:' + port);
 })
