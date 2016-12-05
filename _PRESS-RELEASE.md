@@ -1,4 +1,4 @@
-# Project Name #
+# WeatherVote! #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,29 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Vote on Weather! ##
+  > Let the internet know what you think and see what others think too!
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Target Audience ##
+  > Are YOU sick of the weather in your area? Let the world know! If you don't like what's outside LET YOUR VOICE BE HEARD...
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Join the revolution and vote on the weather NEAR YOU. Too hot? Too cold? Did the sun go down too early? THE WORLD NEEDS TO KNOW WHAT YOU THINK!
 
-## Problem ##
-  > Describe the problem your product solves.
+## Problem Inspiration ##
+  > For too long we have been without adequate means of voicing our opinions on this enormous aspect of our lives. SILENT NO MORE. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Now, with the advancements of todays technology we are able to bring you a solution that is sure to please. USING THE POWER OF THE INTERNET WE WILL ACHIEVE THIS GREAT FEAT.
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+## Quote from our marketing team ##
+  > Our website does what?!
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Simply visit our page and get to doing what you do best and voice your opinions about the weather near you!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > Really? This is what you spend your time and energy doing?
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > So STAY TUNED! We'll be rolling out this product in the very near future so YOU TOO can voice your important opinions about something that literally nobody can change. COMING SOON!
