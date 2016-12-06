@@ -30,7 +30,9 @@ module.exports = function(grunt) {
             insertGlobals: true
           }
         },
-        src: ['src/**/*.jsx'],
+        src: [
+          'src/**/*.jsx'
+          ],
         dest: 'public/bundle.js'
       }
     },
