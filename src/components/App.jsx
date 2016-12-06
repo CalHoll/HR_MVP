@@ -23,7 +23,7 @@ class App extends React.Component {
       <div>
         <div>
           this is a placeholder for the weather display.
-          <Weather // weather = {this.state.currentWeather} 
+          <Weather weather = {this.state.currentWeather} 
           />
         </div>
         <div>
@@ -39,4 +39,4 @@ class App extends React.Component {
 };
 
 window.App = App;
-// export default App;
+// export default App; 
