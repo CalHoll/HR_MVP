@@ -1,53 +1,30 @@
-//unsure if necessary:
-
 class App extends React.Component {
   constructor(props) {
     super(props)
+
+
+
     this.state = {
-      city: 'St. Johns, NL',
-      currentWeather: 'Rain, Drizzle, Fog',
+      city: 'London',
+      currentWeather: 'ITS SNOWING OF COURSE - Please wait for Summer...',
       weatherForecast: ['Rain','Drizzle','Fog'],
       VoteText: 'awww man this weather suxxxxxx',
       VoteList: [],
       Username: 'Anonymous'
     }
+
+
+
+    var cb = (function (data) {
+        console.log('weather data received');
+        console.log(JSON.stringify(data,null, 2));
+        this.setState({
+          currentWeather: data.weather[0].main,
+        });
+    }).bind(this);
+    this.getWeather(this.state.city, cb);
+
   }
-
-  // getWeather() {
-  //   // Get the data from the cache if possible
-  //   // if (currentWeather[currentCity]) {
-  //   //     this.updateData(); // need to implement a data update
-  //   // }
-  //   // else {
-  //       // Request new data to the API
-  //       // Api.get(cities[currentCity])
-  //       //     .then(function(data) {
-  //       //         citiesWeather[currentCity] = data;
-  //       //         this.updateData();
-  //       // }.bind(this));
-  //   // }
-  // }
-
-  // getWeather(searchedCity = this.state.city) {
-  //   fetchWeather(searchedCity)
-  //     .then((response) => {
-
-  //       console.log(response);
-
-  //       var weather = _.map(response.list, (dayWeather) => {
-  //         return {
-  //           dayWeather,
-  //           country: response.city.country,
-  //           city: response.city.name
-  //         }
-  //       });
-
-  //       this.setState({
-  //         weekWeather: weather,
-  //         city: this.state.searchedCity,
-  //       });
-  //     })
-  // }
 
   handleSubmitClick () {
     this.setState({
@@ -70,11 +47,33 @@ class App extends React.Component {
     })
   }
 
+  getWeather(city, callback) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q='
+    var API_KEY = "d94bcd435b62a031771c35633f9f310a"
+
+    $.ajax({
+      dataType: "jsonp",
+      url: url + city + '&APPID=' + API_KEY,
+      jsonCallback: 'jsonp',
+      data: { q: city },
+      cache: false,
+      success: function (data) {
+
+        callback(data);
+      }
+    });
+  }
+
   render() {
+
+
     return (
       <div>
         <div>
-          <Weather weather = {this.state.currentWeather} />
+          <Weather
+            weather = {this.state.currentWeather}
+            city = {this.state.city}
+          />
         </div>
 
         <div>
@@ -85,15 +84,14 @@ class App extends React.Component {
             handleVoteText = {this.handleVoteText.bind(this)}
             handleUserText = {this.handleUserText.bind(this)}
           />
-          <br/>
-          <br/>
+
+          <br/> <br/>
+
           <p> VERY IMPORTANT OPINIONS:</p>
-          { this.state.VoteList.map( vote => {
-            return <VoteListEntry
-                      vote = {vote.text}
-                      user = {vote.user}
-                    />
-            })}
+          { this.state.VoteList.map( vote =>
+            <VoteListEntry vote = {vote.text} user = {vote.user} />
+          )}
+
         </div>
       </div>
     );
@@ -101,4 +99,3 @@ class App extends React.Component {
 };
 
 window.App = App;
-// export default App;

@@ -5,3 +5,8 @@ body {
   font-family: "Lato", Helvetica Neue, Helvetica, sans-serif;
 }
 
+weather-component {
+  border-radius: 5px;
+  border-color: black;
+  padding: 10px;
+}

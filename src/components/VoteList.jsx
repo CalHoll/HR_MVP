@@ -1,4 +1,3 @@
-
 class VoteList extends React.Component  {
 
   handleTextChange(e) {
@@ -34,12 +33,14 @@ class VoteList extends React.Component  {
         />
         <br/>
 
-        <input onClick={this.props.handleSubmitClick} type="submit" value="LET WEATHER KNOW!" />
+        <input
+          onClick={this.props.handleSubmitClick}
+          type="submit"
+          value="LET WEATHER KNOW!"
+        />
       </div>
     )
   }
 };
 
-// In the ES6 spec, files are "modules" and do not share a top-level scope.
-// `var` declarations will only exist globally where explicitly defined.
 window.VoteList = VoteList;
