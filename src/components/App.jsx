@@ -9,14 +9,14 @@ class App extends React.Component {
       weatherForecast: ['Rain','Drizzle','Fog'],
       VoteText: 'awww man this weather suxxxxxx',
       VoteList: [],
-      Username: ''
+      Username: 'Anonymous'
     }
-  } 
+  }
 
-  // getWeather() {  
+  // getWeather() {
   //   // Get the data from the cache if possible
   //   // if (currentWeather[currentCity]) {
-  //   //     this.updateData(); // need to implement a data update   
+  //   //     this.updateData(); // need to implement a data update
   //   // }
   //   // else {
   //       // Request new data to the API
@@ -51,13 +51,22 @@ class App extends React.Component {
 
   handleSubmitClick () {
     this.setState({
-      VoteList: this.state.VoteList.concat(this.state.VoteText)
+      VoteList: this.state.VoteList.concat({
+        text: this.state.VoteText,
+        user: this.state.Username
+      })
     })
   }
 
   handleVoteText (vote) {
     this.setState({
       VoteText: vote
+    })
+  }
+
+  handleUserText (user) {
+    this.setState({
+      Username: user
     })
   }
 
@@ -69,19 +78,22 @@ class App extends React.Component {
         </div>
 
         <div>
-          <VoteList 
+          <VoteList
             votes = {this.state.VoteList}
             username = {this.state.Username}
             handleSubmitClick = {this.handleSubmitClick.bind(this)}
             handleVoteText = {this.handleVoteText.bind(this)}
+            handleUserText = {this.handleUserText.bind(this)}
           />
           <br/>
           <br/>
           <p> VERY IMPORTANT OPINIONS:</p>
           { this.state.VoteList.map( vote => {
-          return <VoteListEntry vote = {vote} />
-          })}
-
+            return <VoteListEntry
+                      vote = {vote.text}
+                      user = {vote.user}
+                    />
+            })}
         </div>
       </div>
     );
@@ -89,4 +101,4 @@ class App extends React.Component {
 };
 
 window.App = App;
-// export default App; 
+// export default App;

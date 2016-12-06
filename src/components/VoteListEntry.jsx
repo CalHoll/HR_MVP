@@ -1,12 +1,11 @@
-var VoteListEntry = ({vote}) => {
+var VoteListEntry = ({vote, user}) => {
 
   // var handleClick = function () { // maybe a voteUp function?
   //   onListClick(vote);
   // }
-
   return(
     <div>
-      <h4>{vote}</h4>
+      <h4>{user}: {vote}</h4>
     </div>
   );
 };
