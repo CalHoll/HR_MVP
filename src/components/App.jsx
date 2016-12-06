@@ -5,7 +5,7 @@ class App extends React.Component {
 
 
     this.state = {
-      city: 'London',
+      City: 'London',
       currentWeather: 'ITS SNOWING OF COURSE - Please wait for Summer...',
       weatherForecast: ['Rain','Drizzle','Fog'],
       VoteText: 'awww man this weather suxxxxxx',
@@ -30,7 +30,9 @@ class App extends React.Component {
     this.setState({
       VoteList: this.state.VoteList.concat({
         text: this.state.VoteText,
-        user: this.state.Username
+        user: this.state.Username,
+        city: this.state.City,
+        weather: this.state.currentWeather
       })
     })
   }
@@ -47,13 +49,34 @@ class App extends React.Component {
     })
   }
 
+  handleCityChange () {
+    // city state should already be changed by handle city text
+    // so all that is needed is to refresh the getweather.
+
+    var cb = (function (data) {
+        console.log('weather data received');
+        console.log(JSON.stringify(data,null, 2));
+        this.setState({
+          currentWeather: data.weather[0].main,
+        });
+    }).bind(this);
+    this.getWeather(this.state.city, cb);
+    // console.log("MADE IT INTO THE HANDLE CITY CHANGE FUNCTION")
+  }
+
+  handleCityText (user) {
+    this.setState({
+      City: user
+    })
+  }
+
   getWeather(city, callback) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q='
     var API_KEY = "d94bcd435b62a031771c35633f9f310a"
 
     $.ajax({
       dataType: "jsonp",
-      url: url + city + '&APPID=' + API_KEY,
+      url: url + this.state.City + '&APPID=' + API_KEY,
       jsonCallback: 'jsonp',
       data: { q: city },
       cache: false,
@@ -72,7 +95,9 @@ class App extends React.Component {
         <div>
           <Weather
             weather = {this.state.currentWeather}
-            city = {this.state.city}
+            city = {this.state.City}
+            handleSubmitClick = {this.handleCityChange.bind(this)}
+            handleCityText = {this.handleCityText.bind(this)}
           />
         </div>
 
@@ -87,9 +112,14 @@ class App extends React.Component {
 
           <br/> <br/>
 
-          <p> VERY IMPORTANT OPINIONS:</p>
+          <h2> VERY IMPORTANT OPINIONS:</h2>
           { this.state.VoteList.map( vote =>
-            <VoteListEntry vote = {vote.text} user = {vote.user} />
+            <VoteListEntry
+              vote = {vote.text}
+              user = {vote.user}
+              city = {vote.city}
+              weather = {vote.weather}
+               />
           )}
 
         </div>

@@ -10,9 +10,9 @@ class VoteList extends React.Component  {
     this.props.handleUserText(user);
   }
 
-  handleSubmit(e) {
-    this.props.handleSubmitClick();
-  }
+  // handleSubmit(e) {
+  //   this.props.handleSubmitClick();
+  // }
 
   render() {
     return (
@@ -36,7 +36,7 @@ class VoteList extends React.Component  {
         <input
           onClick={this.props.handleSubmitClick}
           type="submit"
-          value="LET WEATHER KNOW!"
+          value="WEATHERVOTE!"
         />
       </div>
     )
