@@ -8,7 +8,7 @@ class App extends React.Component {
       currentWeather: 'Rain, Drizzle, Fog',
       weatherForecast: ['Rain','Drizzle','Fog'],
       VoteText: 'awww man this weather suxxxxxx',
-      VoteList: ['Who made this app?', 'is this really a thing?', 'I like goldfish'],
+      VoteList: [],
       Username: ''
     }
   } 
