@@ -1,37 +1,87 @@
-// import React from 'react';
-
+//unsure if necessary:
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentWeather: {},
-      Voting: []
+      city: 'St. Johns, NL',
+      currentWeather: 'Rain, Drizzle, Fog',
+      weatherForecast: ['Rain','Drizzle','Fog'],
+      VoteText: 'awww man this weather suxxxxxx',
+      VoteList: ['Who made this app?', 'is this really a thing?', 'I like goldfish'],
+      Username: ''
     }
   } 
 
-  getWeather(query) {  
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
-    // needs to set some state of a component on main page
+  // getWeather() {  
+  //   // Get the data from the cache if possible
+  //   // if (currentWeather[currentCity]) {
+  //   //     this.updateData(); // need to implement a data update   
+  //   // }
+  //   // else {
+  //       // Request new data to the API
+  //       // Api.get(cities[currentCity])
+  //       //     .then(function(data) {
+  //       //         citiesWeather[currentCity] = data;
+  //       //         this.updateData();
+  //       // }.bind(this));
+  //   // }
+  // }
+
+  // getWeather(searchedCity = this.state.city) {
+  //   fetchWeather(searchedCity)
+  //     .then((response) => {
+
+  //       console.log(response);
+
+  //       var weather = _.map(response.list, (dayWeather) => {
+  //         return {
+  //           dayWeather,
+  //           country: response.city.country,
+  //           city: response.city.name
+  //         }
+  //       });
+
+  //       this.setState({
+  //         weekWeather: weather,
+  //         city: this.state.searchedCity,
+  //       });
+  //     })
+  // }
+
+  handleSubmitClick () {
+    this.setState({
+      VoteList: this.state.VoteList.concat(this.state.VoteText)
+    })
+  }
+
+  handleVoteText (vote) {
+    this.setState({
+      VoteText: vote
+    })
   }
 
   render() {
     return (
       <div>
         <div>
-          this is a placeholder for the weather display.
-          <Weather weather = {this.state.currentWeather} 
-          />
+          <Weather weather = {this.state.currentWeather} />
         </div>
+
         <div>
-          THIS IS WHERE VOTING WILL GO
-          <Voting
-            // user = {this.state.user} // needs to display current user
-            // comment = {this.handleListClick.bind(this)}
+          <VoteList 
+            votes = {this.state.VoteList}
+            username = {this.state.Username}
+            handleSubmitClick = {this.handleSubmitClick.bind(this)}
+            handleVoteText = {this.handleVoteText.bind(this)}
           />
+          <br/>
+          <br/>
+          <p> VERY IMPORTANT OPINIONS:</p>
+          { this.state.VoteList.map( vote => {
+          return <VoteListEntry vote = {vote} />
+          })}
+
         </div>
       </div>
     );

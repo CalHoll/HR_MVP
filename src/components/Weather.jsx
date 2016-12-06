@@ -1,9 +1,12 @@
+
 var Weather = ({weather}) => (
   // !weather.id ? <img src="./assets/spiffygif_46x46.gif">Please wait...</img> :
   <div className="weather-component">
-    WEATHER COMPONENT GOES HERE in /WEATHER.JSX
+    
     <div>
-      <img src="./assets/spiffygif_46x46.gif" /><p>Please wait...</p>
+      <p>IT'S SNOWING OF COURSE - Please wait for Summer...</p>
+      <img src="./assets/spiffygif_46x46.gif" />
+      <br/>
     </div>
   </div>
 );
