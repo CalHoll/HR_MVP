@@ -1,3 +1,6 @@
+// import React from 'react';
+
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -5,7 +8,7 @@ class App extends React.Component {
       currentWeather: {},
       Voting: []
     }
-  }
+  } 
 
   getWeather(query) {  
     var options = {
@@ -18,12 +21,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="col-md-7">
+        <div>
           this is a placeholder for the weather display.
           <Weather // weather = {this.state.currentWeather} 
           />
         </div>
-        <div className="col-md-5">
+        <div>
+          THIS IS WHERE VOTING WILL GO
           <Voting
             // user = {this.state.user} // needs to display current user
             // comment = {this.handleListClick.bind(this)}
@@ -35,3 +39,4 @@ class App extends React.Component {
 };
 
 window.App = App;
+// export default App;
