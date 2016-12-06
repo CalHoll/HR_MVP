@@ -17,15 +17,14 @@ class VoteList extends React.Component  {
   render() {
     return (
       <div>
-        <br/>
-        Name:
+        <h3>Name:</h3>
         <input
           onChange={this.handleUserChange.bind(this)}
           type="text"
           name="Name"
-        /><br/>
+        />
 
-        YOUR OPINION:
+      <h3>YOUR IMPORTANT OPINION:</h3>
         <input
           onChange={this.handleTextChange.bind(this)}
           type="text"

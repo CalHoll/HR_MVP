@@ -83,6 +83,9 @@ class App extends React.Component {
       success: function (data) {
 
         callback(data);
+      },
+      error: function(data) {
+        alert('could not find that location!')
       }
     });
   }
@@ -109,8 +112,6 @@ class App extends React.Component {
             handleVoteText = {this.handleVoteText.bind(this)}
             handleUserText = {this.handleUserText.bind(this)}
           />
-
-          <br/> <br/>
 
           <h2> VERY IMPORTANT OPINIONS:</h2>
           { this.state.VoteList.map( vote =>
