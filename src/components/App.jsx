@@ -8,7 +8,7 @@ class App extends React.Component {
       City: 'London',
       currentWeather: 'ITS SNOWING OF COURSE - Please wait for Summer...',
       weatherForecast: ['Rain','Drizzle','Fog'],
-      VoteText: 'awww man this weather suxxxxxx',
+      VoteText: 'awww man this weather is... unpleasant!',
       VoteList: [],
       Username: 'Anonymous'
     }

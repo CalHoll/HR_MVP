@@ -35,4 +35,7 @@ bower_components/
 .flooignore
 
 # API key
-assets/config/config.js
+public/config/config.js
+
+#database
+public/data/

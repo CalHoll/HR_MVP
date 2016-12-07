@@ -18,19 +18,21 @@ class Weather extends React.Component  {
       <div className="weather-component">
         <div>
           <h3>Current Location: <b>{this.props.city}</b></h3>
-
+          <br/>
+          <h3>Change Location:</h3>
           <input
             onChange={this.handleTextChange.bind(this)}
             type="text"
             name="Name"
           />
-
+        <br/>
           <input
+            className='weatherbutton'
             onClick={this.props.handleSubmitClick}
             type="submit"
             value="Update your Weather!"
           />
-
+        <br/>
           <h3>Current Weather:<b>{this.props.weather}</b></h3>
         </div>
       </div>

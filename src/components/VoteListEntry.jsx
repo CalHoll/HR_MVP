@@ -6,6 +6,7 @@ var VoteListEntry = ({vote, user, city, weather}) => {
   return(
     <div>
       <h3>{user}, in {city}, where the current condition is: {weather} </h3>
+      <br/>
       <h4> ===============> {vote}</h4>
     </div>
   );

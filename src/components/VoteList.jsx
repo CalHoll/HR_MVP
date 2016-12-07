@@ -23,9 +23,10 @@ class VoteList extends React.Component  {
           type="text"
           name="Name"
         />
-
+      <br/>
       <h3>YOUR IMPORTANT OPINION:</h3>
         <input
+          className="opinion"
           onChange={this.handleTextChange.bind(this)}
           type="text"
           name="opinion"
