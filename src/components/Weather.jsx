@@ -30,7 +30,7 @@ class Weather extends React.Component  {
             className='weatherbutton'
             onClick={this.props.handleSubmitClick}
             type="submit"
-            value="Update your Weather!"
+            value="Update Current Weather!"
           />
         <br/>
           <h3>Current Weather:<b>{this.props.weather}</b></h3>

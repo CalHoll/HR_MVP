@@ -6,7 +6,8 @@ class App extends React.Component {
 
     this.state = {
       City: 'London',
-      currentWeather: 'ITS SNOWING OF COURSE - Please wait for Summer...',
+      CurrentCity: 'London',
+      currentWeather: '',
       weatherForecast: ['Rain','Drizzle','Fog'],
       VoteText: 'awww man this weather is... unpleasant!',
       VoteList: [],
@@ -52,6 +53,9 @@ class App extends React.Component {
   handleCityChange () {
     // city state should already be changed by handle city text
     // so all that is needed is to refresh the getweather.
+    // this.setState({
+    //   City: this.state.CurrentCity
+    // });
 
     var cb = (function (data) {
         console.log('weather data received');
@@ -60,13 +64,13 @@ class App extends React.Component {
           currentWeather: data.weather[0].main,
         });
     }).bind(this);
-    this.getWeather(this.state.city, cb);
+    this.getWeather(this.state.City, cb);
     // console.log("MADE IT INTO THE HANDLE CITY CHANGE FUNCTION")
   }
 
-  handleCityText (user) {
+  handleCityText (text) {
     this.setState({
-      City: user
+      City: text
     })
   }
 

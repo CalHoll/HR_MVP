@@ -15,10 +15,10 @@ app.listen(port, function() {
 
 
 
-// setting up the database
+// for setting up the database
 
 
-// 
+//
 // var Q = require('q');
 // var mongoose = require('mongoose');
 // // var bcrypt = require('bcrypt-nodejs');
