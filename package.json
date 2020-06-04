@@ -11,7 +11,7 @@
   "dependencies": {
     "bcrypt": "^1.0.0",
     "express": "^4.14.0",
-    "mongoose": "^4.7.1",
+    "mongoose": "^5.7.5",
     "q": "^1.4.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -28,6 +28,6 @@
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-nodemon": "^0.4.2",
-    "open": "0.0.5"
+    "open": "^6.0.0"
   }
 }
